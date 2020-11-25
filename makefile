@@ -3,14 +3,11 @@ EXECUTABLES = candy
 
 all: candy
 
-candy: finalMain.o input.o Candy.o
-	g++ finalMain.o input.o Candy.o -o candy  $(MATH_FLAG)
+candy: finalMain.o Candy.o
+	g++ finalMain.o Candy.o -o candy  $(MATH_FLAG)
 
-finalMain.o: finalMain.cpp input.c Candy.cpp
+finalMain.o: finalMain.cpp Candy.cpp
 	g++ finalMain.cpp -c
-
-input.o: input.c
-	gcc input.c -c
 
 Candy.o: Candy.cpp
 	g++ Candy.cpp -c
